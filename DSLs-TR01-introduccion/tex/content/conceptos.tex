@@ -1,0 +1,141 @@
+% !TeX spellcheck = en_US
+% -*-coding: utf-8 -*-
+
+%% Conceptos
+%% ---------
+
+\section{Conceptos de Ingeniería de Lenguajes basada en Modelos}
+\label{sec:conceptos}
+
+La MDLE busca aplicar los conceptos de MDE para la creación de lenguajes.
+Esto supone la confluencia de terminos y conceptos tanto de desarrollo basado en modelos como de las tecnologías tradicionales de análizadores sintácticos y compiladores.
+Esta sección presenta algunos de esos conceptos.
+
+\subsection{Ingeniería basada en Modelos}
+
+En Ingeniería de Software basada en Modelos (MDSE), desarrolladores definen la funcionalidad del sistema usando modelos, 
+usan operaciones sobre modelos para hacer simulaciones y verificar las especificaciones, 
+y finalmente usan transformaciones de modelos para generar el código fuente de las aplicaciones.
+
+Usando una propuesta de MDSE como la \textit{Model Driven Architecture} (MDA) de la \textit{Object Management Group} (OMG), 
+los desarrolladores construyen un modelo independientes de la plataforma (PIM, \textit{Platform Independent Model})
+usando un  lenguaje de dominio específico (DSL, \textit{Domain Specific Language}).
+El PIM es entonces transformado en uno o más modelos específicos de plataformas (PSMs, \textit{Platform Specific Models}) como .Net o Java.
+Finalmente, estos modelos específicos de plataforma son transformados al código fuente de las aplicaciones. 
+Por ejemplo un analista de negocios puede crear una especificación para un proceso de negocio una interaccion del usuario y luego generar el código fuente correspondiente usando transformaciones de modelos.
+Sistemas de AndroMDA y OpenMDX pueden ser usados para desarrollar aplicaciones basadas en MDA.
+
+Además de MDA, existen muchas aproximaciones basadas en modelos para la creación de aplicaciones.
+Por ejemplo, HEDL permite crear bases de datos y código java JPA a partir de un DSL que define las entidades.
+UWE, OOH4RIA y WebML permiten crear aplicaciones web completas a partir de varios modelos describiendo requerimientos de datos, de navegación, de presentación y de funcionalidades.
+Applause y Moble permiten crear aplicaciones móviles que funcionan en Android y iPhone a partir de un DSL que define los formularios y la base de datos de la aplicación. 
+Así mismo, Gaspard2 y \ldots permiten crear software para sistemas embebidos usando modelos que representan la funcionalidad y los bloques funcionales y de hardware de la solución.
+
+\subsubsection{Meta-Modelos y Modelos}
+
+La MDSE se centra en el uso de modelos y meta-modelos.
+Un modelo es una representación abstracta del algún dominio relacionado con el problema o con una solución informática.
+Estos modelos son ampliamente utilizados en ingeniería de software.
+Por ejemplo, un desarrollador puede hacer un modelo entidad relación, un modelo de clases o un modelo de actividades para representar los requerimientos y/o el diseño de una aplicación de software.
+La figura \ldots muestra un modelo entidad relación de un \ldots  
+
+Un meta-modelo es una especificación de algún tipo de modelo. 
+Este metamodelo define los elementos que se pueden colocar en un modelo, así como algunas reglas que estos elementos deben seguir.
+Por ejemplo, un modelo entidad relación se compone de entidades, atributos y relaciones, y no es posible colocar un atributo por fuera de una entidad.
+La figura \ldots muestra una definición del modelo entidad relación usando un modelo de meta-clases.
+
+Cuando un modelo está definido de acuerdo a los elementos y reglas de un metamodelo se dice que el modelo \textit{es conforme} con ese metamodelo.
+Por ejemplo, el modelo mostrado en la figura \ldots es conforme con el metamodelo en la figura \ldots 
+
+En la actualidad, los metamodelos usualmente se definen usando uno de dos estándares: MOF o ECore.
+MOF (\textit{Meta-Object Facility}) es el estándar de metamodelamiento definido por la OMG para crear los lenguajes de metamodelamiento UML y BPMN entre otros.
+Ecore es una versión simplificada de MOF creada por IBM y que hace parte de Eclipse Modeling Framework.
+En la actualidad, Ecore es ampliamente usado en infinidad de lenguajes, compiladores y editores que funcionan sobre la plataforma Eclipse. 
+
+\subsubsection{Semántica estática}
+
+En muchas ocasiones, la sola construcción de un metamodelo basado en meta-clases.
+En esos casos, al igual que con los diagramas de UML, es posible definir reglas usando condiciones y restricciones en OCL.
+
+Por ejemplo, en el modelo entidad-relación no es posible que exista una entidad sin un nombre.
+Esta regla no se puede colocar en el modelo de metaclases sin indicar una restricción.
+Figura \ldots muestra una invariante en OCL que establece que no puede existir una entidad sin nombre.
+
+Se conoce como Semática Estática o Reglas de Bien Formado (WFR, \textit{Well formed rules}) al conjunto de reglas que permiten saber si un modelo está correctamente construido.
+En algunos casos, estas reglas pueden clasificarse para determinar si corresponden a errores en el modelo o solo a advertencias. 
+
+
+\subsubsection{Sintáxis concreta}
+
+En MDSE los modelos pueden ser visualizados de diferentes formas.
+Por ejemplo, un programa puede representarse en el código fuente, un flujograma o un diagrama de actividades en UML.
+Aunque todas estas tienen una apariencia diferente, todas ellas son representaciones del mismo modelo.
+
+Una sintáxis concreta es la forma textual o gráfica como un modelo en particular puede ser representado.
+Normalmente los entornos de desarrollo, como Eclipse, permiten tener varias sintáxis concretas para el mismo modelo.
+Figura \ldots muestra tres posibles sintáxis concretas para el modelo presentado en la figura \ldots
+Allí puede verse que el mismo modelo entidad relación puede ser representado usando un diagrama, una estructura jerárquica (en árbol) o una representación textual.
+
+
+\subsubsection{Transformaciones de Modelos}
+
+Las aproximaciones de MDSE se basan en la transformación de modelos para crear nuevos modelos, documentación y código fuente.
+Existen dos tipos de transformaciones: 
+(1) las transformaciones de modelo a modelo (conocidas como transformaciones M2M) 
+y (2) las transformaciones de modelo a texto (conocidas como transformaciones M2T)
+
+\ldots
+
+
+
+\subsection{Patrones en el desarrollo de lenguajes}
+
+De acuerdo a Terence Par, existen varios patrones identificables en la implementación de un lenguaje de programación.
+En primer lugar, típicamente cualquier programa en un lenguaje particular es procesado por un analizador sintáctico que genera una representación intermedia (p.ej. un árbol de sintáxis abstracta).
+Cuando el lenguaje es interpretado, el mismo u otro programa toma esa representación interna y ejecuta cada una de las instrucciones una a una de acuerdo a una reglas semánticas prestablecidas.
+En el caso que el lenguaje sea compilado, el mismo u otro programa toma esa representación interna y genera el código correspondiente en un lenguaje de propósito general (p.ej. Java) o un lenguaje de bajo nivel (p.ej. assembler o código binario). 
+ 
+(ver gráfico general de Terence Par en Language implementation patterns)
+http://pragprog.com/book/tpdsl/language-implementation-patterns
+
+Algunas herramientas para la creación de lenguajes, como Stratego/XT, permiten definir una grámatica y generar automáticamente el análizador sintáctico.
+Adicionalmente, es posible definir unas reglas de re-escritura que transforman el árbol de sintáxis que genera el analizador sintáctico en código fuente en otro lenguaje.
+
+\subsubsection{Lenguaje específico de dominio}
+
+Un lenguaje específico de dominio (DSL) es \ldots
+
+Debido a la naturaleza específica de estos lenguajes, ellos pueden representar aspectos estáticos o dinámicos de algún dominio.
+Por ejemplo, SQL representa un conjunto de DSLs:
+el lenguaje de definición de datos (DDL, \textit{Data Definition Language}) es un lenguaje que permite definir la estructura de la base de datos,
+el lenguaje de manipulación de datos (DML, \textit{Data Manipulation Language}) permite ejecutar consultas y actualizaciones sobre los dayos,
+y el lenguaje de módulos almacenados (PSM, \textit{Persistent Stored Modules}) permite definir procedimientos almacenados en la base de datos.
+En este caso, mientras el lenguaje DDL permite definir aspectos estáticos (la estructura), el lenguaje PSM permite definir aspectos dinámicos (algoritmos y programas).   
+
+\subsubsection{Sintáxis y Grámatica de Lenguaje de Programación}
+
+En lenguajes de programación, la sintáxis es \ldots
+
+La sintáxis está determinada por una grámatica del lenguaje.
+Esta grámatica define las reglas que se debe usar para escribir un programa en ese lenguaje.
+Por ejemplo, la grámatica de Java define como se deben escribir los programas en Java.
+Estas grámaticas suelen especificarse usando algún lenguaje de definición de grámaticas. 
+Normalmente los lenguajes son definidos usando BNF (\textit{Backus Naur Form}), EBNF o alguna variación.
+
+\ldots
+
+
+
+\subsection{Ingeniería de Lenguajes basado en Modelos}
+
+La Ingeniería de Lenguajes basado en Modelos es la aplicación de principios de MDE para la construcción de lenguajes, interpretadores y compiladores.
+Usando esta aproximación, los desarrolladores del lenguaje se centran en especificar los metamodelos, las grámaticas y las transformaciones a los lenguajes de bajo nivel.
+Luego, usando estas especificaciones, los desarrolladores pueden utilizar herramientas basadas en modelos para generar los analizadores sintácticos, editores e interpretadores.
+
+Por ejemplo, usando Xtext es posible implementar un lenguaje especificando solamente la grámatica y las transformaciones a Java.
+En ese caso, un editor en Eclipse, un depurador y un compilador pueden ser generados a partir de eso.
+Usando sistemas como EMfText y Kermeta, es posible definir el metamodelo, la grámatica y el comportamiento, y generar un editor, un interpretador y un depurador para el lenguaje.
+
+Además, para implementar lenguajes más complejos, es posible usar una serie de modelos intermedios y transformaciones.
+Es posible aprovechar todas las tecnologías de transformación de modelos para ejecutar optimizaciones en el código, visualizaciones, análisis estático y generación por multiples etapas.
+      

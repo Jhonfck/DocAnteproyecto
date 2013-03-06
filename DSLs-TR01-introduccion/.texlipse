@@ -1,0 +1,14 @@
+#TeXlipse project settings
+#Sat Mar 02 20:41:42 CET 2013
+markTmpDer=true
+builderNum=2
+outputDir=output/
+makeIndSty=
+bibrefDir=
+outputFormat=pdf
+tempDir=tex
+mainTexFile=DSL-TR01-introduccion-a-dsls.tex
+outputFile=DSL-TR01-introduccion-a-dsls.tex
+langSpell=en
+markDer=true
+srcDir=tex/

@@ -1,0 +1,23 @@
+\begin{thebibliography}{1}
+
+\bibitem{nutch}
+Apache nutch.
+\newblock http://lucene.apache.org/nutch/.
+
+\bibitem{bixo}
+Bixo framework.
+\newblock http://bixo.101tec.com/.
+
+\bibitem{crawler4j}
+Crawler4j project.
+\newblock https://code.google.com/p/crawler4j/.
+
+\bibitem{joycrawler}
+Joycrawler project.
+\newblock https://code.google.com/p/joycrawler/.
+
+\bibitem{websphinx}
+Websphinx: Website-specific processors for html information extraction.
+\newblock http://www.cs.cmu.edu/~rcm/websphinx/.
+
+\end{thebibliography}

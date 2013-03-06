@@ -1,0 +1,41 @@
+% !TeX spellcheck = en_US
+% -*-coding: utf-8 -*-
+
+%% Configuration for Listings package
+%% ----------------------------------
+
+% -- options for listing
+
+\renewcommand{\thelstlisting}{\arabic{lstlisting}}
+
+% -- language definition
+
+% Transaction DSL
+\lstdefinelanguage{useCasePatternsDsl}{
+  morekeywords={true,false,
+	catalog, pattern,
+	entity, list, of, attributes,
+	constraints, forAll, contains,
+	templates
+	},
+ keywordstyle=[2]{\textbf},
+ morecomment=[l]{//}, 
+ morecomment=[s]{/*}{*/}, 
+ morestring=[b]",
+ tabsize=4}
+
+% Domain DSL
+\lstdefinelanguage{domainDsl}{
+  morekeywords={ domain,
+	application, uses,
+	use, cases,
+	entity, aggregate, valueObject,
+	@id,
+	uuid, string, money, int, boolean, decimal
+	},
+ keywordstyle=[2]{\textbf},
+ morecomment=[l]{//}, 
+ morecomment=[s]{/*}{*/}, 
+ morestring=[b]",
+ tabsize=4}
+

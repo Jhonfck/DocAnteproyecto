@@ -1,0 +1,67 @@
+% !TeX spellcheck = en_US
+% -*-coding: utf-8 -*-
+
+%% Technical Report TR-01
+%% Case Study : Crawling user list 
+
+%% Configuration
+%% -------------
+
+% Use of standard Latex article
+\documentclass{article}
+% UTF-8 encoding 
+\usepackage[utf8]{inputenc}
+% management of graphics
+\usepackage{graphicx}
+% include URL links
+\usepackage{url}
+% code visualization
+\usepackage{listings}
+
+%% Document
+%% --------
+\begin{document}
+
+%% Title
+%% -----
+
+\title{Conceptos de la Ingeniería de Lenguajes basadas en Modelos}
+\author{
+	Alejandro Rios \\
+	Universidad Santiago de Cali\\
+	\textt{jhonwkf@gmail.com}
+	% \\
+	% Jaime Chavarriaga\\
+	% Grupo de Construcción de Software, Universidad de los Andes\\
+	% \texttt{ja.chavarriaga908@uniandes.edu.co}
+  }
+
+% date of document
+\date{March 2, 2013}
+
+\maketitle
+
+%% Language definitions for Listings
+%% --------------------------------
+\input{./config/language-definition.tex}
+\input{./config/en-espanol.tex}
+
+%% Abstract
+%% --------
+\input{./content/resumen.tex}
+
+%% Content
+%% -------
+\input{./content/introduccion.tex}
+\input{./content/conceptos.tex}
+\input{./content/ejemplo.tex}
+\input{./content/conclusiones.tex}
+
+%% Bibliography
+%% ------------
+\bibliographystyle{abbrv}
+\bibliography{../bib/bibliography} 
+
+
+%% End of document
+\end{document}

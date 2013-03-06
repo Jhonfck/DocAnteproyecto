@@ -1,0 +1,15 @@
+Reporte Técnico de DSLs usando modelos
+======================================
+
+== Ejercicio inicial
+
+- Definición de la gramática de un lenguage
+- Creación de editor de texto (sintáxis concreta)
+- Usando el procesador del lenguaje en un programa de ejemplo
+- Implementando un interpretador sencillo
+
+== Posible proyecto
+- Un lenguaje de programación en español como SL o PSEInt
+  http://www.cnc.una.py/sl/SL-index.html
+  http://pseint.sourceforge.net/
+  http://sites.google.com/site/rubenriveroroca/
