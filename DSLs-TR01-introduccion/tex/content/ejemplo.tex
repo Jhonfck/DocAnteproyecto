@@ -27,8 +27,11 @@ más de ellos trabajan juntos.
  \caption{Metamodelo \textit{Office}} \label{}
  \end{center}
  \end{figure}
- \item{Crear un nuevo \textit{EMF Model} y seleccione \textit{Ecoremodel}} esto creara un archivo con extensión \textit{.genmodel}
-  que contiene información adicional para el \textit{codegenerartion}. También es considerado una vista alterna del \textit{Metamodelo}. 
+ \item{La definición de la sintaxis textual debe estar incluida en un proyecto de tipo EMF. Este proyecto debe ser creado a partir del \textit{Metamodelo}. 
+ Este contiene información adicional para el \textit{codegenerartion} (También es considerado una vista alterna del \textit{Metamodelo})}. 
+ \begin{center}
+ \fbox{Click der. (.ecore) - New\ldots - Other\ldots - EMF Model - Ecore model}\par
+ \end{center}
  \begin{figure}[h]
  \begin{center}
  \includegraphics[width=0.7\textwidth] 
@@ -36,9 +39,27 @@ más de ellos trabajan juntos.
  \caption{Metamodelo.Genmodel \textit{Office}} \label{}
  \end{center}
  \end{figure}
- \item{Crear la sintaxis conreta. Para el desarrollo de este se tiene dos opciones: (1)Generar la sintaxis automaticamente por medio del archivo con extensión \textit{.genmodel}.
- click derecho sobre el archivo y se elige la opción \textit{Generate HUTN Sintax}. 
- (2)Crear un nuevo archivo con extensión \textit{.cs} donde se especificara paso a paso la sintaxis.
+ \item{Crear la sintaxis concreta. Para el desarrollo de este se tiene dos opciones: (1)Generar la sintaxis automaticamente por medio del archivo con extensión \textit{.genmodel}}.\\
+ \begin{center}
+ \fbox{Click der. (.genmodel) - \textit{Generate HUTN Sintax}.}\par
+ \end{center}
+ (2)Crear un nuevo archivo con extensión \textit{.cs} donde se especificara paso a paso la sintaxis.\\
+ La sintaxis cocnreta esta definica por tres bloques.\\
+ (1)Bloque de configuracion: contiene el nombre del metamodelo base y la metaclase que actua como raiz\ldots\\
+ (2)Bloque de Tokens lexicos(opcional)\ldots\\
+ (3)Bloque de Reglas: el cual define de una sintaxis concreta para cada metaclase\ldots\\
+ \item {Despues de obtener la sintaxis textual ya establecida se debe generar la infraestructura de EMFText}.
+ \begin{center}
+ \fbox{Click der. (\textit{.cs}) - \textit{Generate Text Resource}.}\par
+ \end{center}
+ \item{Se generara un proyecto el cual debera ejecutarse para poder acceder al \textit{DSL} creado.}
+ \begin{center}
+ \fbox{Click der. (Proyecto generado) - Run AS - Eclipse Application.}\par
+ \end{center}
  }
- }
+ 
+ Finalmente eL DSL ha sido creado y esta listo para el desarrollo de proyectos\ldots 
+ 
+ 
+ 
                                                
